@@ -23,15 +23,19 @@
     // 🧠 Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
     function buildPeter() {
-
-    }
+      return { firstName: "Peter", lastName: "Pan", age: 12 }
+    }  
 
     // 👉 CHALLENGE 2
     // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
-    function buildUser(firstName, lastName, age) {
-
+    function buildUser(firstName, lastName, age){
+      let result={}
+      result.firstName=firstName
+      result.lastName=lastName
+      result.age=age
+      return result
     }
 
     // 👉 CHALLENGE 3
@@ -42,8 +46,13 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
+    function deletePrice(obj) {
+     if (obj.price !== undefined){
+      delete obj.price
+     } else{
+      obj.priceless = true
+     }
+     return obj
     }
 
     // 👉 CHALLENGE 4
@@ -53,9 +62,13 @@
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
-
+     let numOfElements=arr.length
+     let evenPlease= numOfElements % 2 === 0
+      if (evenPlease) {
+        return true 
+      }
+        return false
     }
-
     // 👉 CHALLENGE 5
     // 🧠 The function firstOrLast takes an array as the first argument, and a Boolean as the second.
     // 🧠 If the Boolean is true, the function returns the first element of the array, otherwise the last one.
